@@ -38,15 +38,26 @@ export const MealText = styled.Text`
     font-family: ${theme.font.family.regular};
     font-size: ${theme.font.size.body.m};
     color: ${theme.colors.gray_2};
-  
   `}
 `
 
-export const MealType = styled.View`
+export const MealType = styled.View<{$type: string}>`
   width: 14px;
   height: 14px;
 
   border-radius: 100px;
 
-  background-color: ${({theme}) => theme.colors.red_mid};
+  ${({$type}) => {
+    switch ($type) {
+      case 'in': 
+        return css`
+          background-color: ${({theme}) => theme.colors.green_mid};
+          `;
+        default: 
+          return css`
+          background-color: ${({theme}) => theme.colors.red_mid};
+          `;
+      }
+    }
+  }
 `

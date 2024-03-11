@@ -2,12 +2,9 @@ import styled, { css } from "styled-components/native";
 
 export const Container = styled.View`
   display: flex;
-  /* flex-direction: row; */
   justify-content: space-between;
-
   padding: 0px 24px;
-
-  `
+`
 
 export const Subtitle = styled.Text`
   ${({theme}) => css`
@@ -40,15 +37,11 @@ export const ButtonTitle = styled.Text`
   `}
 `
 
-export const MealsContainer = styled.View`
-  display: flex;
-  gap: 8px;
-`
-
 export const DateText = styled.Text`
   ${({theme}) => css`
     font-family: ${theme.font.family.bold};
     font-size: ${theme.font.size.title.s};
     color: ${theme.colors.gray_1};
+    background-color: ${theme.colors.white};
   `}
 `

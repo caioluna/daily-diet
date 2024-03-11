@@ -1,14 +1,20 @@
-import { View, Text } from 'react-native'
-import React from 'react'
 import { Container, MealText, MealType, Separator, TimeText } from './styles'
+import { DataProps } from '../Meals'
 
-export function MealItem() {
+export function MealItem({ label, time, type }: DataProps) {
   return (
     <Container>
-      <TimeText>20:00</TimeText>
-        <Separator />
-      <MealText>X-tudo</MealText>
-        <MealType />
+      <TimeText>{time}</TimeText>
+      <Separator />
+
+      <MealText 
+        numberOfLines={1} 
+        ellipsizeMode='tail'
+      >
+        {label}
+      </MealText>
+
+      <MealType $type={type} />
     </Container>
   )
 }
