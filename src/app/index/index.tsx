@@ -6,15 +6,20 @@ import { Header } from '@/components/Header'
 import { ThemeProvider } from 'styled-components/native'
 import theme from '@/theme'
 import { Goal } from '@/components/Goal'
+import { Meals } from '@/components/Meals'
+import { Container } from './styles'
 
 export default function Home() {
   return (
     <ThemeProvider theme={theme}>
       <SafeAreaView>
-        <ScrollView showsVerticalScrollIndicator={false}>
+        <Container 
+          showsVerticalScrollIndicator={false}
+        >
           <Header />
           <Goal />
-        </ScrollView>
+          <Meals />
+        </Container>
       </SafeAreaView>
     </ThemeProvider>
   )

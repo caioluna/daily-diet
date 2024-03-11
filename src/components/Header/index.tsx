@@ -10,7 +10,7 @@ export function Header() {
       <LogoImage source={Logo} />
 
       <ProfilePicture>
-        <Image source={Logo}/>
+        <Image source={{uri: 'https://c.stocksy.com/a/9Cu200/z9/692673.jpg', width: 40, height: 40, }}/>
       </ProfilePicture>
     </Container> 
   )
