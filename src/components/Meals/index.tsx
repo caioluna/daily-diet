@@ -1,8 +1,9 @@
 import { SectionList, View } from 'react-native'
-import { Plus } from 'phosphor-react-native'
 import { AddMealButton, ButtonTitle, Container, DateText, Subtitle } from './styles'
 import theme from '@/theme'
 import { MealItem } from '../MealItem'
+import { Link } from 'expo-router'
+import { Plus } from 'phosphor-react-native'
 
 export type DataProps = {
   time: string
@@ -58,10 +59,12 @@ export function Meals() {
     <Container>
       <Subtitle>Refeições</Subtitle>
 
-      <AddMealButton onPress={() => {}}>
-        <Plus size={18} color={theme.colors.white} /> 
-        <ButtonTitle>Nova refeição</ButtonTitle>
-      </AddMealButton>
+      <Link asChild href={'/'}>
+        <AddMealButton>
+          <Plus size={18} color={theme.colors.white} /> 
+          <ButtonTitle>Nova refeição</ButtonTitle>
+        </AddMealButton>
+      </Link>
 
       <SectionList 
         sections={DATA}

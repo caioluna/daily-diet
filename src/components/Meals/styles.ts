@@ -1,3 +1,4 @@
+import { Pressable } from "react-native";
 import styled, { css } from "styled-components/native";
 
 export const Container = styled.View`
@@ -14,7 +15,7 @@ export const Subtitle = styled.Text`
   `}
 `
 
-export const AddMealButton = styled.Pressable`
+export const AddMealButton = styled(Pressable)`
   display: flex;
   flex-direction: row;
   justify-content: center;

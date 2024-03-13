@@ -1,25 +1,20 @@
-import { SafeAreaView } from 'react-native'
-
-import { Header } from '@/components/Header'
-import { Goal } from '@/components/Goal'
-import { Meals } from '@/components/Meals'
-
-import { ThemeProvider } from 'styled-components/native'
-import { Container } from './styles'
-import theme from '@/theme'
+import { Header } from '@/components/Header';
+import { Goal } from '@/components/Goal';
+import { Meals } from '@/components/Meals';
+import { Container } from './styles';
+import { useEffect } from 'react';
+import { StatusBar } from 'react-native';
 
 export default function Home() {
+  useEffect(() => {
+    StatusBar.setBarStyle('dark-content');
+  }, []);
+
   return (
-    <ThemeProvider theme={theme}>
-      <SafeAreaView>
-        <Container 
-          // showsVerticalScrollIndicator={false}
-        >
-          <Header />
-          <Goal />
-          <Meals />
-        </Container>
-      </SafeAreaView>
-    </ThemeProvider>
-  )
+    <Container>
+      <Header />
+      <Goal />
+      <Meals />
+    </Container>
+  );
 }

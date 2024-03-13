@@ -1,8 +1,8 @@
+
+import { ArrowUpRight } from "phosphor-react-native";
 import styled from "styled-components/native";
-import { ArrowUpRight } from 'phosphor-react-native'
 
-
-export const Container = styled.View`
+export const Container = styled.Pressable`
   display: flex;
   align-self: center;
   justify-content: center;
@@ -19,7 +19,7 @@ export const Container = styled.View`
 export const Title = styled.Text`
   font-family: ${({theme}) => theme.font.family.bold};
   font-size: 32px;
-  `
+`
 
 export const Body = styled.Text`
   font-family: ${({theme}) => theme.font.family.regular};
