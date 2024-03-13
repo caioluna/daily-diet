@@ -1,25 +1,33 @@
-import styled from "styled-components/native";
+import { Pressable } from "react-native";
+import styled, { css } from "styled-components/native";
 
-export const Container = styled.View`
-  display: flex;
+export const Container = styled.View<{ $slim: boolean }>`
+  position: relative;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  
+  ${(props) => props.$slim
+    ? css`
+      height: 0;
+      padding: 0;
+    `
+    : css`
+      padding: 30px 24px 0;
+    `};
 
-  padding: 12px 24px;
+  z-index: 1;
 `
 
-export const LogoImage = styled.Image`
-  width: 82px;
-  height: 37px;
+export const BackButton = styled(Pressable)`
+  position: absolute;
+  left: 24px;
+  top: 30px;
 `
 
-export const ProfilePicture = styled.View`
-  width: 40px;
-  height: 40px;
-
-  border-width: 2px;
-  border-style: solid;
-  border-color: ${({theme}) => theme.colors.gray_2};
-  border-radius: 100px;
-  overflow: hidden;
+export const Title = styled.Text`
+  ${({ theme }) => css`
+    font-family: ${theme.font.family.bold};
+    font-size: ${theme.font.size.title.s};
+  `}
 `

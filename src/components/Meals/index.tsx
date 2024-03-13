@@ -1,20 +1,26 @@
-import { SectionList, View } from 'react-native'
-import { AddMealButton, ButtonTitle, Container, DateText, Subtitle } from './styles'
-import theme from '@/theme'
-import { MealItem } from '../MealItem'
-import { Link } from 'expo-router'
-import { Plus } from 'phosphor-react-native'
+import { SectionList, View } from 'react-native';
+import {
+  AddMealButton,
+  ButtonTitle,
+  Container,
+  DateText,
+  Subtitle,
+} from './styles';
+import theme from '@/theme';
+import { MealItem } from '../MealItem';
+import { Link } from 'expo-router';
+import { Plus } from 'phosphor-react-native';
 
 export type DataProps = {
-  time: string
-  label: string
-  type: string
-}
+  time: string;
+  label: string;
+  type: string;
+};
 
 export type ListDataProps = {
-  title: string
-  data: DataProps[]
-}
+  title: string;
+  data: DataProps[];
+};
 
 export function Meals() {
   const DATA: ListDataProps[] = [
@@ -41,7 +47,7 @@ export function Meals() {
           label: 'Vitamina de banana com abacate',
           type: 'in',
         },
-      ]
+      ],
     },
     {
       title: '11.08.22',
@@ -51,31 +57,31 @@ export function Meals() {
           label: 'X-tudo',
           type: 'out',
         },
-      ]
+      ],
     },
-  ]
+  ];
 
   return (
     <Container>
       <Subtitle>Refeições</Subtitle>
 
-      <Link asChild href={'/'}>
+      <Link asChild href={'/addmeal/'}>
         <AddMealButton>
-          <Plus size={18} color={theme.colors.white} /> 
+          <Plus size={18} color={theme.colors.white} />
           <ButtonTitle>Nova refeição</ButtonTitle>
         </AddMealButton>
       </Link>
 
-      <SectionList 
+      <SectionList
         sections={DATA}
         keyExtractor={(item, index) => item.time + index}
         renderItem={({ item }) => <MealItem {...item} />}
-        renderSectionHeader={
-          ({section: {title}}) => <DateText>{title}</DateText>
-        }
-        ItemSeparatorComponent={() => <View style={{ height: 8}} />}
-        SectionSeparatorComponent={() => <View style={{ height: 8}} />}
+        renderSectionHeader={({ section: { title } }) => (
+          <DateText>{title}</DateText>
+        )}
+        ItemSeparatorComponent={() => <View style={{ height: 8 }} />}
+        SectionSeparatorComponent={() => <View style={{ height: 8 }} />}
       />
     </Container>
-  )
+  );
 }

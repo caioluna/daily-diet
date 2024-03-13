@@ -4,7 +4,7 @@ import {
   NunitoSans_400Regular,
   NunitoSans_700Bold,
 } from '@expo-google-fonts/nunito-sans';
-import { Slot, Stack } from 'expo-router';
+import { Stack } from 'expo-router';
 import { ThemeProvider } from 'styled-components/native';
 import theme from '@/theme';
 

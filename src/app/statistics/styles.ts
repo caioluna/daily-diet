@@ -1,17 +1,13 @@
 import styled, { css } from "styled-components/native";
 
 export const Container = styled.SafeAreaView`
-  display: flex;
-  height: 100%;
-background-color: ${({ theme }) => theme.colors.green_light};
+  background-color: ${({ theme }) => theme.colors.green_light};
 `
 
 export const Hero = styled.View`
-  position: relative;
-  display: flex;
   justify-content: center;
   align-items: center;
-  height: 200px;
+  height: 170px;
 `
 
 export const Title = styled.Text`
@@ -25,7 +21,8 @@ export const Body = styled.Text`
 `
 
 export const StatisticsView = styled.View`
-  display: flex;
+  top: -20px;
+
   align-items: center;
   gap: 12px;
 

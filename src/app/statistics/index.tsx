@@ -12,17 +12,14 @@ import { Link } from 'expo-router';
 import theme from '@/theme';
 import { ArrowLeft } from 'phosphor-react-native';
 import { StatisticContainer } from '@/components/StatisticContainer';
+import { Header } from '@/components/Header';
 
 export default function Statistics() {
   return (
     <Container>
-      <Hero>
-        <Link href="/" asChild>
-          <Pressable style={{ position: 'absolute', top: 24, left: 24 }}>
-            <ArrowLeft color={theme.colors.green_dark} size={24} />
-          </Pressable>
-        </Link>
+      <Header slim color={theme.colors.green_dark} link="/" />
 
+      <Hero>
         <Title>90,86%</Title>
         <Body>das refeições dentro da dieta</Body>
       </Hero>

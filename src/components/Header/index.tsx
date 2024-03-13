@@ -1,17 +1,24 @@
-import { Image } from 'react-native'
+import { AllRoutes, Link } from 'expo-router';
+import { BackButton, Container, Title } from './styles';
+import { ArrowLeft } from 'phosphor-react-native';
 
-import Logo from './img/logo.png'
-import { Container, LogoImage, ProfilePicture } from './styles';
+type HeaderProps = {
+  link: AllRoutes;
+  color: string;
+  title?: string;
+  slim?: boolean;
+};
 
-export function Header() {
-  
+export function Header({ link, color, title, slim = false }: HeaderProps) {
   return (
-    <Container>  
-      <LogoImage source={Logo} />
+    <Container $slim={slim}>
+      <Link href={link} asChild>
+        <BackButton>
+          <ArrowLeft color={color} size={24} />
+        </BackButton>
+      </Link>
 
-      <ProfilePicture>
-        <Image source={{uri: 'https://c.stocksy.com/a/9Cu200/z9/692673.jpg', width: 40, height: 40, }}/>
-      </ProfilePicture>
-    </Container> 
-  )
+      <Title>{title}</Title>
+    </Container>
+  );
 }
