@@ -13,7 +13,7 @@ export const Container = styled.View<{ $slim: boolean }>`
       padding: 0;
     `
     : css`
-      padding: 30px 24px 0;
+      padding: 30px 24px 20px;
     `};
 
   z-index: 1;
